@@ -92,7 +92,8 @@ module.exports = class extends Generator {
       this.templatePath("README.md"),
       this.destinationPath(`${this.answers.name}/README.md`),
       {
-        name: this.answers.name
+        name: this.answers.name,
+        description: this.answers.description,
       }
     );
 
