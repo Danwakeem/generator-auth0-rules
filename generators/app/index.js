@@ -80,7 +80,7 @@ module.exports = class extends Generator {
   writing() {
     this.fs.copyTpl(
       this.templatePath("package"),
-      this.destinationPath("package.json"),
+      this.destinationPath(`${this.answers.name}/package.json`),
       {
         name: this.answers.name,
         description: this.answers.description,
@@ -90,7 +90,7 @@ module.exports = class extends Generator {
     );
     this.fs.copyTpl(
       this.templatePath("README.md"),
-      this.destinationPath("README.md"),
+      this.destinationPath(`${this.answers.name}/README.md`),
       {
         name: this.answers.name
       }
@@ -98,42 +98,42 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("lintignore"),
-      this.destinationPath(`.eslintignore`)
+      this.destinationPath(`${this.answers.name}/.eslintignore`)
     );
 
     this.fs.copyTpl(
       this.templatePath("lintrc"),
-      this.destinationPath(`.eslintrc.json`)
+      this.destinationPath(`${this.answers.name}/.eslintrc.json`)
     );
 
     this.fs.copyTpl(
       this.templatePath("gignore"),
-      this.destinationPath(`.gitignore`)
+      this.destinationPath(`${this.answers.name}/.gitignore`)
     );
 
     this.fs.copyTpl(this.templatePath("nyc"), this.destinationPath(`.nycrc`));
 
     this.fs.copyTpl(
       this.templatePath("pretty"),
-      this.destinationPath(`.prettierrc`)
+      this.destinationPath(`${this.answers.name}/.prettierrc`)
     );
 
     this.fs.copyTpl(
       this.templatePath("deploy"),
-      this.destinationPath(`deploy.js`)
+      this.destinationPath(`${this.answers.name}/deploy.js`)
     );
 
     this.fs.copyTpl(
       this.templatePath("gulper"),
-      this.destinationPath(`gulpfile.js`)
+      this.destinationPath(`${this.answers.name}/gulpfile.js`)
     );
 
     this.fs.copyTpl(
       this.templatePath("travis"),
-      this.destinationPath(`.travis.yml`)
+      this.destinationPath(`${this.answers.name}/.travis.yml`)
     );
 
-    this.fs.copyTpl(this.templatePath("env"), this.destinationPath(`.env`), {
+    this.fs.copyTpl(this.templatePath("env"), this.destinationPath(`${this.answers.name}/.env`), {
       clientId: this.answers.clientId,
       clientSecret: this.answers.clientSecret,
       domain: this.answers.domain
@@ -141,12 +141,12 @@ module.exports = class extends Generator {
 
     this.fs.copyTpl(
       this.templatePath("rule"),
-      this.destinationPath(`rules/${this.answers.firstRule}.js`)
+      this.destinationPath(`${this.answers.name}/rules/${this.answers.firstRule}.js`)
     );
 
     this.fs.copyTpl(
       this.templatePath("rule.spec"),
-      this.destinationPath(`tests/rules/${this.answers.firstRule}.spec.js`),
+      this.destinationPath(`${this.answers.name}/tests/rules/${this.answers.firstRule}.spec.js`),
       { firstRule: this.answers.firstRule }
     );
   }

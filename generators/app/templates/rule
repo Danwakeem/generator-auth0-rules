@@ -2,4 +2,5 @@ function rule(user, context, callback) {
   callback(null, user, context);
 }
 
+// This will be removed on deploy
 module.exports = { rule };
