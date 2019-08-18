@@ -1,0 +1,8 @@
+node_modules
+coverage
+dist
+.nyc_output
+.env
+.envlocal
+.envprod
+.envstaging

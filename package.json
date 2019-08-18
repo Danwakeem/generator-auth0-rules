@@ -1,0 +1,79 @@
+{
+  "name": "generator-auth-0-rules",
+  "version": "0.0.1",
+  "description": "Yeoman generator to create and deploy auth0 rules ",
+  "homepage": "https://github.com/Danwakeem/generator-auth0-rules",
+  "author": {
+    "name": "Danwakeem",
+    "email": "danwakeem@gmail.com",
+    "url": "https://www.danwakeem.com"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "yeoman",
+    "auth0",
+    "rules",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.5",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo": "^0.26.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.2.0",
+    "prettier": "^1.18.2",
+    "prettier-eslint-cli": "^5.0.0",
+    "yeoman-assert": "^3.1.0",
+    "yeoman-test": "^1.7.0"
+  },
+  "engines": {
+    "npm": ">= 4.0.0"
+  },
+  "dependencies": {
+    "yeoman-generator": "^2.0.1",
+    "chalk": "^2.1.0",
+    "yosay": "^2.0.1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "xo",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "plugins": [
+      "prettier"
+    ]
+  },
+  "scripts": {
+    "format": "prettier-eslint --write '**/*.js'",
+    "pretest": "eslint .",
+    "test": "jest"
+  },
+  "repository": "Danwakeem/generator-auth-0-rules",
+  "license": "MIT"
+}

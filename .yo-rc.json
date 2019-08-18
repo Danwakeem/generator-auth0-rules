@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "GithubUsername",
+      "authorEmail": "person@email.com",
+      "authorUrl": "https://www.mysite.com"
+    }
+  }
+}
