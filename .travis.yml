@@ -8,6 +8,7 @@ node_js:
 cache:
   directories:
   - node_modules
+after_script: cat ./coverage/lcov.info | coveralls
 jobs:
   include:
     - stage: "Lint and Test"

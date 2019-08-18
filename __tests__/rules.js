@@ -2,7 +2,7 @@ const path = require("path");
 const assert = require("yeoman-assert");
 const helpers = require("yeoman-test");
 
-describe("generator-auth-0-rules:rules", () => {
+describe("generator-auth0-rules:rules", () => {
   beforeAll(() => {
     return helpers
       .run(path.join(__dirname, "../generators/rules"))

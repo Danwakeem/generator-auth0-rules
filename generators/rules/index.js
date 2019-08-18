@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Ooo someone wants to create another auth0 rule using the ${chalk.red(
-          "generator-auth-0-rules"
+          "generator-auth0-rules"
         )} generator :)`
       )
     );

@@ -1,5 +1,5 @@
 {
-  "name": "generator-auth-0-rules",
+  "name": "generator-auth0-rules",
   "version": "0.0.1",
   "description": "Yeoman generator to create and deploy auth0 rules ",
   "homepage": "https://github.com/Danwakeem/generator-auth0-rules",
@@ -74,6 +74,6 @@
     "pretest": "eslint .",
     "test": "jest"
   },
-  "repository": "Danwakeem/generator-auth-0-rules",
+  "repository": "Danwakeem/generator-auth0-rules",
   "license": "MIT"
 }

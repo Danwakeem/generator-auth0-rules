@@ -1,13 +1,13 @@
-# generator-auth-0-rules [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-auth0-rules [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > Yeoman generator to create and deploy auth0 rules 
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-auth-0-rules using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-auth0-rules using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g generator-auth-0-rules
+npm install -g generator-auth0-rules
 ```
 
 Then generate your new project:
@@ -28,11 +28,11 @@ yo auth-0-rules
 MIT © [Danwakeem](https://www.danwakeem.com)
 
 
-[npm-image]: https://badge.fury.io/js/generator-auth-0-rules.svg
-[npm-url]: https://npmjs.org/package/generator-auth-0-rules
-[travis-image]: https://travis-ci.com/Danwakeem/generator-auth-0-rules.svg?branch=master
-[travis-url]: https://travis-ci.com/Danwakeem/generator-auth-0-rules
-[daviddm-image]: https://david-dm.org/Danwakeem/generator-auth-0-rules.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/Danwakeem/generator-auth-0-rules
-[coveralls-image]: https://coveralls.io/repos/Danwakeem/generator-auth-0-rules/badge.svg
-[coveralls-url]: https://coveralls.io/r/Danwakeem/generator-auth-0-rules
+[npm-image]: https://badge.fury.io/js/generator-auth0-rules.svg
+[npm-url]: https://npmjs.org/package/generator-auth0-rules
+[travis-image]: https://travis-ci.com/Danwakeem/generator-auth0-rules.svg?branch=master
+[travis-url]: https://travis-ci.com/Danwakeem/generator-auth0-rules
+[daviddm-image]: https://david-dm.org/Danwakeem/generator-auth0-rules.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/Danwakeem/generator-auth0-rules
+[coveralls-image]: https://coveralls.io/repos/Danwakeem/generator-auth0-rules/badge.svg
+[coveralls-url]: https://coveralls.io/r/Danwakeem/generator-auth0-rules

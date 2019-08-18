@@ -16,7 +16,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to the funkadelic ${chalk.red(
-          "generator-auth-0-rules"
+          "generator-auth0-rules"
         )} generator! Are you ready to get crazy?`
       )
     );
