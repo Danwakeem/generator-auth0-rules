@@ -133,20 +133,28 @@ module.exports = class extends Generator {
       this.destinationPath(`${this.answers.name}/.travis.yml`)
     );
 
-    this.fs.copyTpl(this.templatePath("env"), this.destinationPath(`${this.answers.name}/.env`), {
-      clientId: this.answers.clientId,
-      clientSecret: this.answers.clientSecret,
-      domain: this.answers.domain
-    });
+    this.fs.copyTpl(
+      this.templatePath("env"),
+      this.destinationPath(`${this.answers.name}/.env`),
+      {
+        clientId: this.answers.clientId,
+        clientSecret: this.answers.clientSecret,
+        domain: this.answers.domain
+      }
+    );
 
     this.fs.copyTpl(
       this.templatePath("rule"),
-      this.destinationPath(`${this.answers.name}/rules/${this.answers.firstRule}.js`)
+      this.destinationPath(
+        `${this.answers.name}/rules/${this.answers.firstRule}.js`
+      )
     );
 
     this.fs.copyTpl(
       this.templatePath("rule.spec"),
-      this.destinationPath(`${this.answers.name}/tests/rules/${this.answers.firstRule}.spec.js`),
+      this.destinationPath(
+        `${this.answers.name}/tests/rules/${this.answers.firstRule}.spec.js`
+      ),
       { firstRule: this.answers.firstRule }
     );
   }
