@@ -13,7 +13,7 @@ npm install -g generator-auth0-rules
 Then generate your new project:
 
 ```bash
-yo auth-0-rules
+yo auth0-rules
 ```
 
 ## Getting To Know Yeoman
