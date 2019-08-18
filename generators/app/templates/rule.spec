@@ -9,7 +9,7 @@ describe('<%= firstRule %>', () => {
     // Add your configuration object here
     global.configuration = {};
     cb = sandbox.spy();
-    rule = proxyquire('./../../rules/<%= firstRule %>', {});
+    rule = proxyquire('./../../rules/<%= firstRule %>', {}).rule;
   });
 
   afterEach(() => sandbox.restore());
