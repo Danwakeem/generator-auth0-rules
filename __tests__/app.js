@@ -18,17 +18,17 @@ describe("generator-auth0-rules:app", () => {
 
   it("creates files", () => {
     assert.file([
-      "package.json",
-      "README.md",
-      ".eslintignore",
-      ".eslintrc.json",
-      ".gitignore",
-      ".prettierrc",
-      "gulpfile.js",
-      ".travis.yml",
-      ".env",
-      "rules/rule.js",
-      "tests/rules/rule.spec.js"
+      "app/package.json",
+      "app/README.md",
+      "app/.eslintignore",
+      "app/.eslintrc.json",
+      "app/.gitignore",
+      "app/.prettierrc",
+      "app/gulpfile.js",
+      "app/.travis.yml",
+      "app/.env",
+      "app/rules/rule.js",
+      "app/tests/rules/rule.spec.js"
     ]);
   });
 });
