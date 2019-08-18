@@ -16,6 +16,12 @@ Then generate your new project:
 yo auth0-rules
 ```
 
+And finally generate additional auth0 rules:
+
+```bash
+yo auth0-rules:rules
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.
