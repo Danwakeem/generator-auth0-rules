@@ -4,10 +4,12 @@ const proxyquire = require('proxyquire');
 describe('<%= firstRule %>', () => {
   let rollbarSpy;
   let cb;
+  let rule;
   beforeEach(() => {
     // Add your configuration object here
     global.configuration = {};
     cb = sandbox.spy();
+    rule = proxyquire('./../../rules/<%= firstRule %>', {});
   });
 
   afterEach(() => sandbox.restore());
@@ -15,7 +17,7 @@ describe('<%= firstRule %>', () => {
   it('should call the callback once', () => {
     const user = { };
     const context = { };
-    log(user, context, cb);
+    rule(user, context, cb);
 
     // Verify callback was called one time
     sandbox.assert.calledOnce(cb);
