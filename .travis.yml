@@ -9,14 +9,7 @@ cache:
   directories:
   - node_modules
 after_script: cat ./coverage/lcov.info | coveralls
-jobs:
-  include:
-    - stage: "Lint and Test"
-      script: npm test
-      name: "Lint and Test"
-    - stage: "Deploy"
-      if: (NOT type IN (pull_request)) AND ((branch = master))
-      deploy:
+deploy:
         provider: npm
         api_key: $NPM_API_KEY
         on: master
