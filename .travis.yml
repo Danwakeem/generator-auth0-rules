@@ -14,5 +14,6 @@ jobs:
       if: (NOT type IN (pull_request)) AND ((branch = master))
       deploy:
         provider: npm
+        email: $NPM_EMAIL
         api_key: $NPM_API_KEY
         on: master
