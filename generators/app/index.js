@@ -32,7 +32,7 @@ module.exports = class extends Generator {
         type: "input",
         name: "description",
         message: "Your project description",
-        default: ""
+        default: "This repo containers our full collection of auth0 rules"
       },
       {
         type: "input",
