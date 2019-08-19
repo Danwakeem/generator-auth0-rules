@@ -19,8 +19,26 @@ yo auth0-rules
 And finally generate additional auth0 rules:
 
 ```bash
-yo auth0-rules:rules
+yo auth0-rules:rule
 ```
+
+## How to deploy rules with [Travis CI](https://travis-ci.com/)
+When you generate a project using this scaffold you will be given a `deploy.js` script at the root of your project that will be called from your `travis.yml`. So when you create the project and add rules via the command above they will be packaged and deployed to your auth0 account using the deploy script running in your [Travis CI](https://travis-ci.com/) account.
+
+Obviously, you do not want your auth0 credentials in your repo so this project assumes that you have them set as secret environment files on your Travis CI project. The following keys will need to be set in your [Travis CI](https://travis-ci.com/) project settings.
+
+- `CLIENT_ID`
+- `CLIENT_SECRET`
+- `DOMAIN`
+
+You can find your `CLIENT_ID` and `CLIENT_SECRET` in your auth0 account if you go to `Application > API Explorer > Settings`
+
+![Auth0 Credentials](https://s3.amazonaws.com/danwakeem.public.images/github/Auth0+Account.png)
+
+The `API Explorer` machine to machine application in auth0 comes with each account by default. If you have removed this account for some reason or would you like to use a different account you may do so by creating a new [machine to machine application](https://auth0.com/machine-to-machine) and granting the following permissions.
+
+- 
+- 
 
 ## Getting To Know Yeoman
 

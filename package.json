@@ -1,6 +1,6 @@
 {
   "name": "generator-auth0-rules",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Yeoman generator to create and deploy auth0 rules ",
   "homepage": "https://github.com/Danwakeem/generator-auth0-rules",
   "author": {
