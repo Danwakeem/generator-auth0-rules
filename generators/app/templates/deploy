@@ -37,7 +37,7 @@ const getRuleFiles = path => {
     return {
       enabled: true,
       script,
-      name: _.snakeCase(fileName.replace('.js', ''))
+      name: fileName.replace('.js', ''),
     };
   });
 };

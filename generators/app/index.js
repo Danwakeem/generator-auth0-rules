@@ -12,7 +12,7 @@ module.exports = class extends Generator {
   }
 
   initializing() {
-    this.composeWith(require.resolve("../rules"));
+    // this.composeWith(require.resolve("../rules"));
   }
 
   async prompting() {
