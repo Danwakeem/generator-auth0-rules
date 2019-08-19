@@ -72,7 +72,7 @@
   "scripts": {
     "format": "prettier-eslint --write '**/*.js'",
     "pretest": "eslint .",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": "Danwakeem/generator-auth0-rules",
   "license": "MIT"
