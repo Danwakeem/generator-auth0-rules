@@ -5,7 +5,7 @@ const helpers = require("yeoman-test");
 describe("generator-auth0-rules:rules", () => {
   beforeAll(() => {
     return helpers
-      .run(path.join(__dirname, "../generators/rules"))
+      .run(path.join(__dirname, "../generators/rule"))
       .withPrompts({ name: "newRule" });
   });
 
