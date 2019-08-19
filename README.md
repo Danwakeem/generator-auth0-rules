@@ -37,8 +37,9 @@ You can find your `CLIENT_ID` and `CLIENT_SECRET` in your auth0 account if you g
 
 The `API Explorer` machine to machine application in auth0 comes with each account by default. If you have removed this account for some reason or would you like to use a different account you may do so by creating a new [machine to machine application](https://auth0.com/machine-to-machine) and granting the following permissions.
 
-- 
-- 
+- `read:rules`
+- `update:rules`
+- `create:rules`
 
 ## Getting To Know Yeoman
 
