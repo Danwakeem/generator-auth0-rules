@@ -11,6 +11,10 @@ module.exports = class extends Generator {
     this.argument("appname", { type: String, required: false });
   }
 
+  initializing() {
+    this.composeWith(require.resolve("../rules"));
+  }
+
   async prompting() {
     // Have Yeoman greet the user.
     this.log(
