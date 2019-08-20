@@ -45,13 +45,19 @@ module.exports = class extends Generator {
     /* istanbul ignore next */
     if (fs.existsSync("rules.meta.js")) {
       const path = "rules.meta.js";
-      const file = this.readFileAsString(path);
-
-      let replace = `},\n  {\n    "file": "${this.answers.name}",\n'`;
-      replace += `    "enabled": ${this.answers.enabled},\n  }\n];]n`;
-      file.replace(/(}\n];\n$|},\n];\n$)/gi, replace);
-
-      this.write(path, file);
+      this.fs.copy(path, path, {
+        process: function(content) {
+          let replace = `},\n  {\n    "file": `;
+          replace += `"${this.answers.name}",\n'`;
+          replace += `    "enabled": ${this.answers.enabled}`;
+          replace += ",\n  }\n];]n";
+          const newContent = content.toString().replace(
+            /(}\n];\n$|},\n];\n$)/gi,
+            replace
+          );
+          return newContent;
+        }
+      });
     } else {
       const rulesMeta = [
         {
