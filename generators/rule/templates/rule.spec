@@ -2,7 +2,6 @@ const sandbox = require('sinon').createSandbox();
 const proxyquire = require('proxyquire');
 
 describe('<%= name %>', () => {
-  let rollbarSpy;
   let cb;
   let rule;
   beforeEach(() => {

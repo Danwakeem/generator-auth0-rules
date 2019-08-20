@@ -73,6 +73,12 @@ module.exports = class extends Generator {
         message:
           "We will start you off with one default rule so you can get a feel for the project structure. What should the name of your first rule be?",
         default: "rule"
+      },
+      {
+        type: "confirm",
+        name: "firstRuleEnabled",
+        message: "Do you want this first rule to be enabled?",
+        default: true
       }
     ]);
   }
@@ -157,6 +163,15 @@ module.exports = class extends Generator {
         `${this.answers.name}/tests/rules/${this.answers.firstRule}.spec.js`
       ),
       { firstRule: this.answers.firstRule }
+    );
+
+    this.fs.copyTpl(
+      this.templatePath("rulesMeta"),
+      this.destinationPath(`${this.answers.name}/rules.meta.js`),
+      {
+        firstRule: this.answers.firstRule,
+        firstRuleEnabled: this.answers.firstRuleEnabled
+      }
     );
   }
 

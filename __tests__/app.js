@@ -28,7 +28,8 @@ describe("generator-auth0-rules:app", () => {
       "app/.travis.yml",
       "app/.env",
       "app/rules/rule.js",
-      "app/tests/rules/rule.spec.js"
+      "app/tests/rules/rule.spec.js",
+      "app/rules.meta.js"
     ]);
   });
 });

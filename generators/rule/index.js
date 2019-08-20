@@ -2,6 +2,7 @@
 const Generator = require("yeoman-generator");
 const chalk = require("chalk");
 const yosay = require("yosay");
+const fs = require("fs");
 
 module.exports = class extends Generator {
   async prompting() {
@@ -19,6 +20,12 @@ module.exports = class extends Generator {
         type: "input",
         name: "name",
         message: "What should the name of your new rule be?"
+      },
+      {
+        type: "confirm",
+        name: "enabled",
+        message: "Do you want this first rule to be enabled?",
+        default: true
       }
     ]);
   }
@@ -34,5 +41,23 @@ module.exports = class extends Generator {
       this.destinationPath(`tests/rules/${this.answers.name}.spec.js`),
       { name: this.answers.name }
     );
+
+    const meta = {
+      file: this.answers.name,
+      enabled: this.answers.enabled
+    };
+    let rulesMeta = [meta];
+    /* istanbul ignore next */
+    if (fs.existsSync("rules.meta.js")) {
+      rulesMeta = require("./rules.meta.js");
+      rulesMeta.push(meta);
+    }
+
+    const fileString = `module.exports = ${JSON.stringify(
+      rulesMeta,
+      null,
+      2
+    )};\n`;
+    fs.writeFileSync("rules.meta.js", fileString);
   }
 };
