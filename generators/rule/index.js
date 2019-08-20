@@ -45,12 +45,12 @@ module.exports = class extends Generator {
     /* istanbul ignore next */
     if (fs.existsSync("rules.meta.js")) {
       const path = "rules.meta.js";
-      this.fs.copy(path, path, {
-        process: function(content) {
+      this.fs.move(path, path, {
+        process: (content) => {
           let replace = `},\n  {\n    "file": `;
-          replace += `"${this.answers.name}",\n'`;
+          replace += `"${this.answers.name}",\n`;
           replace += `    "enabled": ${this.answers.enabled}`;
-          replace += ",\n  }\n];]n";
+          replace += ",\n  }\n];\n";
           const newContent = content
             .toString()
             .replace(/(}\n];\n$|},\n];\n$)/gi, replace);
