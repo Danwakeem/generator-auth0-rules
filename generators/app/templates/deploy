@@ -1,7 +1,7 @@
 const fs = require('fs');
 const _ = require('lodash');
 const { ManagementClient } = require('auth0');
-const rulesMeta = require('./rules.meta');
+const rulesMetaFile = require('./rules.meta');
 
 let baseOrder = 1;
 
@@ -40,8 +40,8 @@ const getRuleFiles = (path, smallestOrder, largestOrder) => {
   }
   return files.map(fileName => {
     const script = fs.readFileSync(`${path}/${fileName}`, { encoding: 'utf8' });
-    const ruleMeta = _.find(rulesMeta, { name: fileName.replace('.js', '') });
-    const ruleIndex = _.findIndex(rulesMeta, { name: fileName.replace('.js', '') });
+    const ruleMeta = _.find(rulesMetaFile, { name: fileName.replace('.js', '') });
+    const ruleIndex = _.findIndex(rulesMetaFile, { name: fileName.replace('.js', '') });
     let enabled = true;
     let order;
     if (ruleMeta) {
