@@ -15,7 +15,8 @@
     "no-await-in-loop": 0,
     "guard-for-in": 0,
     "no-restricted-syntax": 0,
-    "global-require": 0
+    "global-require": 0,
+    "refer-destructuring": 0
   },
   "env": {
     "node": true,

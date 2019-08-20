@@ -14,8 +14,8 @@ describe('<%= name %>', () => {
   afterEach(() => sandbox.restore());
 
   it('should call the callback once', () => {
-    const user = { };
-    const context = { };
+    const user = {};
+    const context = {};
     rule(user, context, cb);
 
     // Verify callback was called one time
