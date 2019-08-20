@@ -49,7 +49,7 @@ module.exports = class extends Generator {
     let rulesMeta = [meta];
     /* istanbul ignore next */
     if (fs.existsSync("rules.meta.js")) {
-      rulesMeta = require("./rules.meta.js");
+      rulesMeta = require("rules.meta.js");
       rulesMeta.push(meta);
     }
 

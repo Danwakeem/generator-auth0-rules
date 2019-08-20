@@ -22,6 +22,9 @@ And finally generate additional auth0 rules:
 yo auth0-rules:rule
 ```
 
+## How to determine order of my rules?
+There will be a `rules.meta.js` file that is created and will maintain a list of all of your rule files. The order that these rules are set in this list will determine what order your rule shoes up in your auth0 rule list. You can also set the `enabled` flag to determine if a rule is active or not.
+
 ## How to deploy rules with [Travis CI](https://travis-ci.com/)
 When you generate a project using this scaffold you will be given a `deploy.js` script at the root of your project that will be called from your `travis.yml`. So when you create the project and add rules via the command above they will be packaged and deployed to your auth0 account using the deploy script running in your [Travis CI](https://travis-ci.com/) account.
 
