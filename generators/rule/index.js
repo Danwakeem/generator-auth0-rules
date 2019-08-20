@@ -51,7 +51,8 @@ module.exports = class extends Generator {
           replace += `"${this.answers.name}",\n'`;
           replace += `    "enabled": ${this.answers.enabled}`;
           replace += ",\n  }\n];]n";
-          const newContent = content.toString().replace(/(}\n];\n$|},\n];\n$)/gi, replace);
+          const newContent = content
+            .toString().replace(/(}\n];\n$|},\n];\n$)/gi, replace);
           return newContent;
         }
       });
