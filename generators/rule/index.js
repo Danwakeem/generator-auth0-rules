@@ -42,22 +42,30 @@ module.exports = class extends Generator {
       { name: this.answers.name }
     );
 
-    const meta = {
-      file: this.answers.name,
-      enabled: this.answers.enabled
-    };
-    let rulesMeta = [meta];
     /* istanbul ignore next */
     if (fs.existsSync("rules.meta.js")) {
-      rulesMeta = require("rules.meta.js");
-      rulesMeta.push(meta);
-    }
+      const path = "rules.meta.js";
+      const file = this.readFileAsString(path);
 
-    const fileString = `module.exports = ${JSON.stringify(
-      rulesMeta,
-      null,
-      2
-    )};\n`;
-    fs.writeFileSync("rules.meta.js", fileString);
+      let replace = `},\n  {\n    "file": "${this.answers.name}",\n'`;
+      replace += `    "enabled": ${this.answers.enabled},\n  }\n];]n`;
+      file.replace(/(}\n];\n$|},\n];\n$)/gi, replace);
+
+      this.write(path, file);
+    } else {
+      const rulesMeta = [
+        {
+          file: this.answers.name,
+          enabled: this.answers.enabled
+        }
+      ];
+
+      const fileString = `module.exports = ${JSON.stringify(
+        rulesMeta,
+        null,
+        2
+      )};\n`;
+      fs.writeFileSync("rules.meta.js", fileString);
+    }
   }
 };
