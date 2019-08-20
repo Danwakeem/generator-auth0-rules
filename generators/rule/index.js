@@ -46,7 +46,7 @@ module.exports = class extends Generator {
     if (fs.existsSync("rules.meta.js")) {
       const path = "rules.meta.js";
       this.fs.move(path, path, {
-        process: (content) => {
+        process: content => {
           let replace = `},\n  {\n    "file": `;
           replace += `"${this.answers.name}",\n`;
           replace += `    "enabled": ${this.answers.enabled}`;
